@@ -5,7 +5,8 @@
     "packages/docs"
   ],
   "scripts": {
-    "publish-packages": "changeset version && changeset publish"
+    "publish-packages": "changeset version && changeset publish",
+    "changeset": "changeset"
   },
   "dependencies": {
     "@changesets/cli": "^2.27.12"
