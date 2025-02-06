@@ -12,7 +12,7 @@ This utility will generate 11 tones based off an input color, similar to the bui
 <div class="color-dynamic bg-dynamic-300"></div>
 ```
 
-![Scheme](../../images/light-mode.png)
+![](https://bitbucket.org/zyphox/tailwind-dynamic-colors/raw/HEAD/images/light-mode.png)
 
 ## Installation
 
@@ -65,7 +65,7 @@ For dark themes, the palette can be inverted with the following css:
 --color-dynamic-direction: -1;
 ```
 
-![Scheme](../../images/dark-mode.png)
+![Scheme](https://bitbucket.org/zyphox/tailwind-dynamic-colors/raw/HEAD/images/dark-mode.png)
 
 ## Hue Shifting
 
@@ -75,7 +75,7 @@ If you want the color to change hue over its tones, you can apply a hue shift. T
 --color-dynamic-hue-shift: 10;
 ```
 
-![Scheme](../../images/hue-shift.png)
+![Scheme](https://bitbucket.org/zyphox/tailwind-dynamic-colors/raw/HEAD/images/hue-shift.png)
 
 ## Containers
 
@@ -87,9 +87,9 @@ You can use the shorthand `dynamic-container`, `dynamic-container-bright` or `dy
 </div>
 ```
 
-![Scheme](../../images/error-container.png)
+![Scheme](https://bitbucket.org/zyphox/tailwind-dynamic-colors/raw/HEAD/images/error-container.png)
 
-![Scheme](../../images/containers.png)
+![Scheme](https://bitbucket.org/zyphox/tailwind-dynamic-colors/raw/HEAD/images/containers.png)
 
 ## Advanced
 
