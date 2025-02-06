@@ -1,5 +1,11 @@
 # @zyphox/tailwind-dynamic-colors
 
+## 1.0.3
+
+### Patch Changes
+
+- 5d61824: Updated README
+
 ## 1.0.2
 
 ### Patch Changes
