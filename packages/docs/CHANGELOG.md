@@ -1,5 +1,11 @@
 # docs
 
+## 1.0.2
+
+### Patch Changes
+
+- 8ae919f: Add npm button to docs website
+
 ## 1.0.1
 
 ### Patch Changes
