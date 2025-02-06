@@ -4,6 +4,9 @@
     "packages/tailwind-dynamic-colors",
     "packages/docs"
   ],
+  "scripts": {
+    "publish-packages": "changeset version && changeset publish"
+  },
   "dependencies": {
     "@changesets/cli": "^2.27.12"
   }
