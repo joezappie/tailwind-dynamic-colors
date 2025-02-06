@@ -1,5 +1,11 @@
 # @zyphox/tailwind-dynamic-colors
 
+## 1.0.4
+
+### Patch Changes
+
+- d6fbf02: Fix images in readme
+
 ## 1.0.3
 
 ### Patch Changes
