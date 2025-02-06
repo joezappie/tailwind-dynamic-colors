@@ -12,7 +12,7 @@ This utility will generate 11 tones based off an input color, similar to the bui
 <div class="color-dynamic bg-dynamic-300"></div>
 ```
 
-![Scheme](images/light-mode.png)
+![Scheme](../../images/light-mode.png)
 
 ## Installation
 
@@ -27,7 +27,7 @@ Once installed, import the utility into you stylesheet
 ```css
 @import 'tailwindcss';
 
-/* Include the Dynamic Tones Plugin */
+/* Include the Dynamic Colors Plugin */
 @import '@zyphox/tailwind-dynamic-colors';
 ```
 
@@ -43,19 +43,19 @@ Define the `--color-dynamic` css variable to give it a base color:
 <div class="color-dynamic" style="--color-dynamic: blue"></div>
 ```
 
-Use it with any of the built in tailwind utility classes such as bg-_, text-_ or border-\*:
+Use it with any of the built in tailwind utility classes such as bg-\*, text-\* or border-\*:
 
-```js
-bg - dynamic - 200;
-text - dynamic - 700;
-border - dynamic - 950;
+```css
+bg-dynamic-200;
+text-dynamic-700;
+border-dynamic-950;
 ```
 
 ```js
 <div class="color-dynamic bg-dynamic-200" style="--color-dynamic: blue"></div>
 ```
 
-This utility automatically adds the contrasting text color when using the bg-dynamic-\* class.
+**Note:** This utility automatically adds the contrasting text color when using the bg-dynamic-\* class.
 
 ## Dark Mode
 
@@ -65,17 +65,17 @@ For dark themes, the palette can be inverted with the following css:
 --color-dynamic-direction: -1;
 ```
 
-![Scheme](images/dark-mode.png)
+![Scheme](../../images/dark-mode.png)
 
 ## Hue Shifting
 
-If you want the color to change hue over its tones, you can apply a hue shift. The middle tone (500) uses the input colors hue and then it either adds or subtracts the hue-shift value for each subsequent tone:
+If you want the color to change hue over its tones, you can apply a hue shift. The middle tone (500) uses the input color's hue and then either adds or subtracts the hue-shift value for each subsequent tone:
 
 ```css
 --color-dynamic-hue-shift: 10;
 ```
 
-![Scheme](images/hue-shift.png)
+![Scheme](../../images/hue-shift.png)
 
 ## Containers
 
@@ -87,7 +87,9 @@ You can use the shorthand `dynamic-container`, `dynamic-container-bright` or `dy
 </div>
 ```
 
-![Scheme](images/containers.png)
+![Scheme](../../images/error-container.png)
+
+![Scheme](../../images/containers.png)
 
 ## Advanced
 
