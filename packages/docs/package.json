@@ -1,0 +1,23 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "docker": "docker build -t zyphox/tailwind-dynamic-colors:latest . -f ./Dockerfile --build-context monorepo=../../"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.3",
+    "tailwindcss": "^4.0.3",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "@zyphox/tailwind-dynamic-colors": "^1.0.0"
+  }
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@zyphox/tailwind-dynamic-colors</title>
+    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+  </head>
+  <body class="m-0 p-0">
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+
+    <template id="tone-palette">
+      <div class="grid grid-cols-11 align-center justify-items-center">
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-50 border-5 border-white/40 grid place-items-center">50</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-100 border-5 border-white/40 grid place-items-center">100</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-200 border-5 border-white/40 grid place-items-center">200</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-300 border-5 border-white/40 grid place-items-center">300</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-400 border-5 border-white/40 grid place-items-center">400</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-500 border-5 border-white/40 grid place-items-center">500</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-600 border-5 border-white/40 grid place-items-center">600</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-700 border-5 border-white/40 grid place-items-center">700</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-800 border-5 border-white/40 grid place-items-center">800</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-900 border-5 border-white/40 grid place-items-center">900</div>
+        <div class="color-dynamic h-15 aspect-square rounded-full bg-dynamic-950 border-5 border-white/40 grid place-items-center">950</div>
+      </div>
+    </template>
+
+    <content class="gap-y-5">
+      <div class="mt-10">
+        <div class="text-4xl font-black col-span-full mb-2">@zyphox/tailwind-dynamic-colors</div>
+        <div class="text-on-surface-variant">Tailwind v4 tool for generating dynamic color palettes entirely in CSS entirely using oklch!</div>
+      </div>
+
+      <div class="flex flex-col gap-4 mb-5">
+        <div>
+          <div class="text-xl font-semibold">Pick a color</div>
+          <div class="mb-2">Drag the slider to see the colors dynamically change.</div>
+        </div>
+        <div class="rainbow h-10 rounded-full p-2">
+          <input type="range" name="colorpicker" min="0" max="360" class="colorpicker h-full w-full" />
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="text-xl font-semibold">Light Mode</div>
+          <div class="mb-2">Light mode will generate light tones on low numbers and dark tones on high numbers.</div>
+        </div>
+
+        <div class="flex gap-6 flex-col">
+          <div class="flex gap-3 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+              </span>
+            </div>
+            <tone-palette for="colorpicker" style="--color-dynamic: blue"></tone-palette>
+          </div>
+        </div>
+      </div>
+
+      <div class="dark full-bleed bg-gray-900 py-15">
+        <div class="flex flex-col gap-4">
+          <div>
+            <div class="text-xl font-semibold">Dark Mode</div>
+            <div class="mb-2">
+              <div>
+                Inside dark containers, invert the color palette with the
+                <code inline>--color-dynamic-direction</code>
+                variable.
+              </div>
+              <div class="text-on-surface-variant">Type &lt;number&gt; (1: Normal -1: Invert)</div>
+            </div>
+          </div>
+
+          <div class="flex gap-6 flex-col">
+            <div class="flex gap-3 flex-col">
+              <div>
+                <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                  <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+                  <span class="px-2 font-code text-sm">--color-dynamic-direction: -1</span>
+                </span>
+              </div>
+              <tone-palette for="colorpicker" style="--color-dynamic: blue"></tone-palette>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="text-xl font-semibold pb-2">Base colors</div>
+          <div class="mb-2">
+            <div>
+              The
+              <code inline>--color-dynamic</code>
+              variable sets the color to use for the tones.
+            </div>
+            <div class="text-on-surface-variant">Type &lt;color&gt; (Any valid css color)</div>
+          </div>
+        </div>
+
+        <div class="flex gap-6 flex-col">
+          <div class="flex gap-3 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+                <span class="px-2 font-code text-sm">--color-dynamic: slateblue</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: slateblue"></tone-palette>
+          </div>
+
+          <div class="flex gap-2 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+
+                <span class="px-2 font-code text-sm">--color-dynamic: #5acd6a</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: #5acd6a"></tone-palette>
+          </div>
+
+          <div class="flex gap-2 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+
+                <span class="px-2 font-code text-sm">--color-dynamic: hsl(8.3, 53.5%, 57.8%)</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: hsl(8.3, 53.5%, 57.8%)"></tone-palette>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b-1 border-outline breakout"></div>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="text-xl font-semibold pb-2">Hue Shift</div>
+          <div class="mb-2">
+            <div>
+              The
+              <code inline>--color-dynamic-hue-shift</code>
+              variable adjusts the hue progressively across tones, creating a gradient. Each tone add or subtracts this value, with tone 500 being the base hue.
+            </div>
+            <div class="text-on-surface-variant">Type &lt;angle&gt; (0-360)</div>
+          </div>
+        </div>
+        <div class="flex gap-6 flex-col">
+          <div class="flex gap-3 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+                <span class="px-2 font-code text-sm">--color-dynamic: blue; --color-dynamic-hue-shift: 10</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: blue; --color-dynamic-hue-shift: 10"></tone-palette>
+          </div>
+          <div class="flex gap-2 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+
+                <span class="px-2 font-code text-sm">--color-dynamic: red; --color-dynamic-hue-shift: 30</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: red; --color-dynamic-hue-shift: 30"></tone-palette>
+          </div>
+        </div>
+        <div class="pt-4">
+          <div>
+            <span class="font-semibold text-blue-500">Global</span> You can apply a global hue shift to all dynamic colors by setting the
+            <code inline>--color-dynamic-global-hue-shift</code>
+            variable. If you define <code inline>--color-dynamic-hue-shift</code> on an element it will override the global setting.
+          </div>
+          <div class="text-on-surface-variant">Type &lt;angle&gt; (0-360)</div>
+        </div>
+      </div>
+
+      <div class="border-b-1 border-outline breakout"></div>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="text-xl font-semibold pb-2">Chroma Scale</div>
+          <div class="mb-2">
+            <div>
+              The
+              <code inline>--color-dynamic-chroma-scale</code>
+              variable adjusts the vibrancy of the colors. Setting it to <code inline>0</code> will be monochromatic while <code inline>1</code> will be full
+              color. Use this to create a more muted palette. Defaults to <code inline>1</code>.
+            </div>
+            <div class="text-on-surface-variant">Type &lt;number&gt; (0-1)</div>
+          </div>
+        </div>
+        <div class="flex gap-6 flex-col">
+          <div class="flex gap-3 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+                <span class="px-2 font-code text-sm">--color-dynamic: magenta; --color-dynamic-chroma-scale: 0.25</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: magenta; --color-dynamic-chroma-scale: 0.25"></tone-palette>
+          </div>
+          <div class="flex gap-2 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+
+                <span class="px-2 font-code text-sm">--color-dynamic: magenta; --color-dynamic-chroma-scale: 0.5</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: magenta; --color-dynamic-chroma-scale: 0.5"></tone-palette>
+          </div>
+          <div class="flex gap-2 flex-col">
+            <div>
+              <span class="flex bg-on-surface/5 rounded w-fit items-center h-7">
+                <span class="flex items-center text-on-surface/60 font-semibold bg-on-surface/5 px-2 uppercase text-xs self-stretch">Example</span>
+
+                <span class="px-2 font-code text-sm">--color-dynamic: magenta; --color-dynamic-chroma-scale: 0.75</span>
+              </span>
+            </div>
+            <tone-palette style="--color-dynamic: magenta; --color-dynamic-chroma-scale: 0.75"></tone-palette>
+          </div>
+        </div>
+        <div class="pt-4">
+          <div>
+            <span class="font-semibold text-blue-500">Global</span> You can apply a global hue shift to all dynamic colors by setting the
+            <code inline>--color-dynamic-global-hue-shift</code>
+            variable. If you define <code inline>--color-dynamic-hue-shift</code> on an element it will override the global setting.
+          </div>
+          <div class="text-on-surface-variant">Type &lt;angle&gt; (0-360)</div>
+        </div>
+      </div>
+
+      <div class="border-b-1 border-outline breakout"></div>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="text-xl font-semibold pb-2">Text Color</div>
+          <div class="mb-2">
+            <div class="flex flex-col gap-3">
+              <div>
+                On color classes are automatically generated by using the extreme opposite tone colors. For example,
+                <code inline>--color-dynamic-400</code> generates an <code inline>--color-on-dynamic-400</code> which is set to
+                <code inline>--color-dynamic-950</code>.
+              </div>
+              <div>
+                <span class="font-semibold text-orange-500">Important</span> If you use the <code inline>bg-dynamic-*</code> class, it will automatically apply
+                the text color
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="font-sm font-bold text-on-surface-variant">Overriding</div>
+          <div>
+            The defaults should work for most scenarios, but you can override it by redefining the
+            <code inline>--color-on-*</code> variables:
+          </div>
+        </div>
+        <!-- prettier-ignore -->
+        <code>.color-dynamic {
+  --color-on-dynamic-50: var(--color-dynamic-950);
+  --color-on-dynamic-100: var(--color-dynamic-900);
+  ...
+  --color-on-dynamic-950: var(--color-dynamic-50);
+}</code>
+      </div>
+
+      <div class="border-b-1 border-outline breakout"></div>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="text-xl font-semibold pb-2">Containers</div>
+          <div class="mb-2">
+            <div class="flex flex-col gap-3">
+              <div>
+                Container classes are generated which give you a consistent way to use the colors across your project. Good for things like badge,
+                notifications, chips. It automatically applies the <code inline>color-dynamic</code> class so all you need to do is specify the color. There are
+                three variants:
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="breakout">
+        <div class="breakout bg-gray-100 py-8 rounded-t-lg">
+          <div class="grid grid-cols-[auto_1fr_1fr_1fr] gap-5 items-center">
+            <div class="text-on-surface-variant font-semibold">Light Mode</div>
+            <div class="dynamic-container-bright p-2 rounded text-center" style="--color-dynamic: blue">dynamic-container-bright</div>
+            <div class="dynamic-container p-2 rounded text-center" style="--color-dynamic: blue">dynamic-container</div>
+            <div class="dynamic-container-dim p-2 rounded text-center" style="--color-dynamic: blue">dynamic-container-dim</div>
+          </div>
+        </div>
+
+        <div class="breakout dark bg-gray-900 py-8 rounded-b-lg">
+          <div class="grid grid-cols-[auto_1fr_1fr_1fr] gap-5 items-center">
+            <div class="text-on-surface-variant font-semibold">Dark Mode</div>
+            <div class="dynamic-container-bright p-2 rounded text-center" style="--color-dynamic: blue">dynamic-container-bright</div>
+            <div class="dynamic-container p-2 rounded text-center" style="--color-dynamic: blue">dynamic-container</div>
+            <div class="dynamic-container-dim p-2 rounded text-center" style="--color-dynamic: blue">dynamic-container-dim</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b-1 border-outline breakout"></div>
+
+      <div class="h-10"></div>
+
+      <div class="breakout color-dynamic bg-dynamic-50 p-2 text-xl font-semibold rounded-lg" style="--color-dynamic: red">
+        <div class="">Advanced Options</div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-3">
+          <div>
+            Each tone is generated with a hand crafted chroma values to ensure maximum visual consistency. It takes these values and multiplies it by the input
+            colors chroma value, ensuring its never going above the possible gamut range. If you would like to override this list of modifiers or if you want to
+            tweak individual tone chroma's, you can override it with the <code inline>--color-dynamic-c-*</code> variable.
+          </div>
+          <!-- prettier-ignore -->
+          <code>:root {
+  --color-dynamic-c-50: 0.21807065217391303;
+  --color-dynamic-c-100: 0.21807065217391303;
+  --color-dynamic-c-200: 0.41372282608695654;
+  --color-dynamic-c-300: 0.6168478260869565;
+  --color-dynamic-c-400: 0.9497282608695653;
+  --color-dynamic-c-500: 1;
+  --color-dynamic-c-600: 0.8824728260869564;
+  --color-dynamic-c-700: 0.7248641304347826;
+  --color-dynamic-c-800: 0.610054347826087;
+  --color-dynamic-c-900: 0.49320652173913043;
+  --color-dynamic-c-950: 0.36684782608695654;
+}</code>
+          <div>Same this applies to the lightness values <code inline>--color-dynamic-l-*</code> variable.</div>
+          <!-- prettier-ignore -->
+          <code>:root {
+  --color-dynamic-l-50: 0.9778;
+  --color-dynamic-l-100: 0.9456;
+  --color-dynamic-l-200: 0.8811;
+  --color-dynamic-l-300: 0.8267;
+  --color-dynamic-l-400: 0.7422;
+  --color-dynamic-l-500: 0.6478;
+  --color-dynamic-l-600: 0.5733;
+  --color-dynamic-l-700: 0.4689;
+  --color-dynamic-l-800: 0.3944;
+  --color-dynamic-l-900: 0.32;
+  --color-dynamic-l-950: 0.2378;
+}</code>
+          <div>
+            Additionally, there is a <code inline>--color-dynamic-h-*</code> modifier which is multiplied by the <code inline>--color-dynamic-hue-shift</code>.
+            You could modify this if you want to make the hue shift more at the ends and less in the middle.
+          </div>
+          <!-- prettier-ignore -->
+          <code>:root {
+  --color-dynamic-h-50: 5;
+  --color-dynamic-h-100: 4;
+  --color-dynamic-h-200: 3;
+  --color-dynamic-h-300: 2;
+  --color-dynamic-h-400: 1;
+  --color-dynamic-h-500: 0;
+  --color-dynamic-h-600: -1;
+  --color-dynamic-h-700: -2;
+  --color-dynamic-h-800: -3;
+  --color-dynamic-h-900: -4;
+  --color-dynamic-h-950: -5;
+}</code>
+        </div>
+      </div>
+      <div class="full-bleed bg-gray-100 py-10">
+        <div>
+          Shoutout to <a href="https://evilmartians.com/chronicles/better-dynamic-themes-in-tailwind-with-oklch-color-magic">Evil Martians blog</a> as a lot of
+          inspiration comes from their article. Their demo required javascript to modify the colors and so this is a pure CSS implementation.
+        </div>
+      </div>
+    </content>
+  </body>
+</html>

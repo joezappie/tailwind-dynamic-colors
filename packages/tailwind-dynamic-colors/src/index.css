@@ -1,0 +1,225 @@
+@theme {
+  --color-dynamic-container: transparent;
+  --color-on-dynamic-container: transparent;
+  --color-dynamic-container-bright: transparent;
+  --color-on-dynamic-container-bright: transparent;
+  --color-dynamic-container-dim: transparent;
+  --color-on-dynamic-container-dim: transparent;
+
+  --color-dynamic-50: transparent;
+  --color-dynamic-100: transparent;
+  --color-dynamic-200: transparent;
+  --color-dynamic-300: transparent;
+  --color-dynamic-400: transparent;
+  --color-dynamic-500: transparent;
+  --color-dynamic-600: transparent;
+  --color-dynamic-700: transparent;
+  --color-dynamic-800: transparent;
+  --color-dynamic-900: transparent;
+  --color-dynamic-950: transparent;
+
+  --color-on-dynamic-50: transparent;
+  --color-on-dynamic-100: transparent;
+  --color-on-dynamic-200: transparent;
+  --color-on-dynamic-300: transparent;
+  --color-on-dynamic-400: transparent;
+  --color-on-dynamic-500: transparent;
+  --color-on-dynamic-600: transparent;
+  --color-on-dynamic-700: transparent;
+  --color-on-dynamic-800: transparent;
+  --color-on-dynamic-900: transparent;
+  --color-on-dynamic-950: transparent;
+}
+
+:root {
+  --color-dynamic-l-50: 0.9778;
+  --color-dynamic-l-100: 0.9456;
+  --color-dynamic-l-200: 0.8811;
+  --color-dynamic-l-300: 0.8267;
+  --color-dynamic-l-400: 0.7422;
+  --color-dynamic-l-500: 0.6478;
+  --color-dynamic-l-600: 0.5733;
+  --color-dynamic-l-700: 0.4689;
+  --color-dynamic-l-800: 0.3944;
+  --color-dynamic-l-900: 0.32;
+  --color-dynamic-l-950: 0.2378;
+
+  --color-dynamic-c-50: 0.21807065217391303;
+  --color-dynamic-c-100: 0.21807065217391303;
+  --color-dynamic-c-200: 0.41372282608695654;
+  --color-dynamic-c-300: 0.6168478260869565;
+  --color-dynamic-c-400: 0.9497282608695653;
+  --color-dynamic-c-500: 1;
+  --color-dynamic-c-600: 0.8824728260869564;
+  --color-dynamic-c-700: 0.7248641304347826;
+  --color-dynamic-c-800: 0.610054347826087;
+  --color-dynamic-c-900: 0.49320652173913043;
+  --color-dynamic-c-950: 0.36684782608695654;
+
+  --color-dynamic-h-50: 5;
+  --color-dynamic-h-100: 4;
+  --color-dynamic-h-200: 3;
+  --color-dynamic-h-300: 2;
+  --color-dynamic-h-400: 1;
+  --color-dynamic-h-500: 0;
+  --color-dynamic-h-600: -1;
+  --color-dynamic-h-700: -2;
+  --color-dynamic-h-800: -3;
+  --color-dynamic-h-900: -4;
+  --color-dynamic-h-950: -5;
+
+  --color-dynamic-direction: 1;
+  --color-dynamic-global-chroma-scale: 1;
+  --color-dynamic-global-hue-shift: 0;
+}
+
+/* prettier-ignore */
+@utility color-dynamic {
+  --color-dynamic-normal: (1 + var(--color-dynamic-direction)) / 2;
+  --color-dynamic-inverted: (1 - var(--color-dynamic-direction)) / 2;
+
+  /* 50 (950 inverted) */
+  --color-dynamic-50: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-50) + var(--color-dynamic-l-950) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-50) + var(--color-dynamic-c-950) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-50) + var(--color-dynamic-h-950) * var(--color-dynamic-inverted)))
+  );
+
+  /* 100 (900 inverted) */
+  --color-dynamic-100: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-100) + var(--color-dynamic-l-900) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-100) + var(--color-dynamic-c-900) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-100) + var(--color-dynamic-h-900) * var(--color-dynamic-inverted)))
+  );
+
+  /* 200 (800 inverted) */
+  --color-dynamic-200: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-200) + var(--color-dynamic-l-800) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-200) + var(--color-dynamic-c-800) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-200) + var(--color-dynamic-h-800) * var(--color-dynamic-inverted)))
+  );
+
+  /* 300 (700 inverted) */
+  --color-dynamic-300: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-300) + var(--color-dynamic-l-700) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-300) + var(--color-dynamic-c-700) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-300) + var(--color-dynamic-h-700) * var(--color-dynamic-inverted)))
+  );
+
+  /* 400 (600 inverted) */
+  --color-dynamic-400: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-400) + var(--color-dynamic-l-600) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-400) + var(--color-dynamic-c-600) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-400) + var(--color-dynamic-h-600) * var(--color-dynamic-inverted)))
+  );
+
+  /* 500 (500 inverted) */
+  --color-dynamic-500: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-500) + var(--color-dynamic-l-500) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-500) + var(--color-dynamic-c-500) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-500) + var(--color-dynamic-h-500) * var(--color-dynamic-inverted)))
+  );
+
+  /* 600 (400 inverted) */
+  --color-dynamic-600: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-600) + var(--color-dynamic-l-400) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-600) + var(--color-dynamic-c-400) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-600) + var(--color-dynamic-h-400) * var(--color-dynamic-inverted)))
+  );
+
+  /* 700 (300 inverted) */
+  --color-dynamic-700: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-700) + var(--color-dynamic-l-300) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-700) + var(--color-dynamic-c-300) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-700) + var(--color-dynamic-h-300) * var(--color-dynamic-inverted)))
+  );
+
+  /* 800 (200 inverted) */
+  --color-dynamic-800: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-800) + var(--color-dynamic-l-200) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-800) + var(--color-dynamic-c-200) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-800) + var(--color-dynamic-h-200) * var(--color-dynamic-inverted)))
+  );
+
+  /* 900 (100 inverted) */
+  --color-dynamic-900: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-900) + var(--color-dynamic-l-100) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-900) + var(--color-dynamic-c-100) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-900) + var(--color-dynamic-h-100) * var(--color-dynamic-inverted)))
+  );
+
+  /* 950 (50 inverted) */
+  --color-dynamic-950: oklch(
+    from var(--color-dynamic, transparent) 
+
+    calc(var(--color-dynamic-normal) * var(--color-dynamic-l-950) + var(--color-dynamic-l-50) * var(--color-dynamic-inverted))
+    calc((var(--color-dynamic-normal) * var(--color-dynamic-c-950) + var(--color-dynamic-c-50) * var(--color-dynamic-inverted)) * c * var(--color-dynamic-chroma-scale, var(--color-dynamic-global-chroma-scale, 1)))
+    calc(h + var(--color-dynamic-hue-shift, var(--color-dynamic-hue-shift, 0)) * (var(--color-dynamic-normal) * var(--color-dynamic-h-950) + var(--color-dynamic-h-50) * var(--color-dynamic-inverted)))
+  );
+
+  --color-on-dynamic-50: var(--color-dynamic-800);
+  --color-on-dynamic-100: var(--color-dynamic-900);
+  --color-on-dynamic-200: var(--color-dynamic-950);
+  --color-on-dynamic-300: var(--color-dynamic-950);
+  --color-on-dynamic-400: var(--color-dynamic-950);
+  --color-on-dynamic-500: color-mix(in srgb, var(--color-dynamic-50) calc(50% + var(--color-dynamic-direction) * 50%), 
+  var(--color-dynamic-950) calc(50% - var(--color-dynamic-direction) * 50%));
+  --color-on-dynamic-600: var(--color-dynamic-50);
+  --color-on-dynamic-700: var(--color-dynamic-50);
+  --color-on-dynamic-800: var(--color-dynamic-100);
+  --color-on-dynamic-900: var(--color-dynamic-100);
+  --color-on-dynamic-950: var(--color-dynamic-200);
+
+  /* Normal container stays the same between both directions */
+  --color-dynamic-container: var(--color-dynamic-100);
+  --color-on-dynamic-container: var(--color-dynamic-800);
+
+  /* Flip the dim and bright containers if inverted */
+  --color-dynamic-container-bright: color-mix(in srgb, var(--color-dynamic-50) calc(50% + var(--color-dynamic-direction) * 50%), 
+  var(--color-dynamic-200) calc(50% - var(--color-dynamic-direction) * 50%));
+  --color-on-dynamic-container-bright: color-mix(in srgb, var(--color-dynamic-700) calc(50% + var(--color-dynamic-direction) * 50%), 
+  var(--color-dynamic-800) calc(50% - var(--color-dynamic-direction) * 50%));
+
+  /* Flip the dim and bright containers if inverted */
+  --color-dynamic-container-dim: color-mix(in srgb, var(--color-dynamic-200) calc(50% + var(--color-dynamic-direction) * 50%), 
+  var(--color-dynamic-50) calc(50% - var(--color-dynamic-direction) * 50%));
+  --color-on-dynamic-container-dim: color-mix(in srgb, var(--color-dynamic-800) calc(50% + var(--color-dynamic-direction) * 50%), 
+  var(--color-dynamic-700) calc(50% - var(--color-dynamic-direction) * 50%));
+}
+
+@utility bg-dynamic-* {
+  /* prettier-ignore */
+  color: --value(--color-on-dynamic-*);
+}
+
+.dynamic-container {
+  @apply color-dynamic bg-dynamic-container;
+}
+
+.dynamic-container-bright {
+  @apply color-dynamic bg-dynamic-container-bright;
+}
+
+.dynamic-container-dim {
+  @apply color-dynamic bg-dynamic-container-dim;
+}

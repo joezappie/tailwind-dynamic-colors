@@ -1,0 +1,131 @@
+@import 'tailwindcss';
+
+/* Include the Dynamic Tones Plugin */
+@import '@zyphox/tailwind-dynamic-colors';
+
+@theme {
+  --font-sans: 'Inter Variable';
+  --font-code: 'Fira Code Variable';
+
+  --color-on-surface: #202020;
+  --color-on-surface-variant: rgb(101, 105, 114);
+  --color-outline: rgb(211, 211, 211);
+}
+
+.dark {
+  --color-dynamic-direction: -1;
+  --color-on-surface: #f1f1f1;
+  --color-on-surface-variant: rgb(156, 158, 177);
+  --color-outline: #101828;
+
+  @apply text-on-surface;
+}
+
+:root {
+  @apply font-sans text-on-surface;
+}
+
+code {
+  @apply bg-on-surface/10 rounded px-1 font-code;
+}
+
+code:not([inline]) {
+  @apply block whitespace-pre-wrap px-3 py-2;
+}
+
+code[inline] {
+  @apply inline-block;
+}
+
+content,
+.full-bleed,
+.breakout {
+  @apply grid;
+  grid-template-columns: [full-start] 1fr [breakout-start] calc(var(--spacing) * 5) [column-start] minmax(1000px, 1fr) [column-end] calc(var(--spacing) * 5) [breakout-end] 1fr [full-end];
+}
+
+content > *,
+.full-bleed > *,
+.breakout > * {
+  grid-column: column;
+}
+
+.full-bleed {
+  grid-column: full;
+}
+
+.breakout {
+  grid-column: breakout;
+}
+
+/* inter-latin-wght-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* fira-code-latin-wght-normal */
+@font-face {
+  font-family: 'Fira Code Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/fira-code:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+a,
+a:link,
+a:active {
+  @apply text-blue-500;
+}
+
+input[name='colorpicker']::-webkit-slider-runnable-track {
+  height: 100%;
+  appearance: none;
+}
+
+input[name='colorpicker']::-moz-range-track {
+  appearance: none;
+}
+
+.rainbow {
+  background: linear-gradient(
+    90deg,
+    oklch(80% 0.37 20deg),
+    oklch(80% 0.37 80deg),
+    oklch(80% 0.37 140deg),
+    oklch(80% 0.37 220deg),
+    oklch(80% 0.37 260deg),
+    oklch(80% 0.37 320deg),
+    oklch(80% 0.37 20deg)
+  );
+}
+
+input[name='colorpicker'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Special styling for WebKit/Blink */
+input[name='colorpicker']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 100%;
+  border-radius: 100px;
+  aspect-ratio: 1 / 1;
+  background: rgb(255 255 255 / 80%);
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.4);
+}
