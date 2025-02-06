@@ -3,5 +3,8 @@
   "workspaces": [
     "packages/tailwind-dynamic-colors",
     "packages/docs"
-  ]
+  ],
+  "dependencies": {
+    "@changesets/cli": "^2.27.12"
+  }
 }
