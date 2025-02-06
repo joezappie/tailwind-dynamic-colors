@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
   "private": true,
@@ -19,6 +19,6 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
-    "@zyphox/tailwind-dynamic-colors": "^1.0.0"
+    "@zyphox/tailwind-dynamic-colors": "^1.0.1"
   }
 }
