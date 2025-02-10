@@ -1,5 +1,11 @@
 # @zyphox/tailwind-dynamic-colors
 
+## 1.0.5
+
+### Patch Changes
+
+- 27877c5: Added git repo links
+
 ## 1.0.4
 
 ### Patch Changes
