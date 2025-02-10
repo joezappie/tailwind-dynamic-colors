@@ -20,5 +20,9 @@
   },
   "dependencies": {
     "@zyphox/tailwind-dynamic-colors": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/zyphox/tailwind-dynamic-colors/src/main/packages/docs/"
   }
 }

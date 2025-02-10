@@ -10,5 +10,9 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.27.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/zyphox/tailwind-dynamic-colors"
   }
 }

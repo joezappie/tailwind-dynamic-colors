@@ -11,5 +11,9 @@
   "description": "",
   "exports": {
     ".": "./src/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/zyphox/tailwind-dynamic-colors/src/main/packages/tailwind-dynamic-colors"
   }
 }
